@@ -1,4 +1,4 @@
-FROM rdccosmo/wrfnetcdf
+FROM rdccosmo/wrf-netcdf
 
 # 32.  x86_64 Linux, gfortran compiler with gcc   (serial) 
 ENV WRF_CONFIGURE_OPTION 32
