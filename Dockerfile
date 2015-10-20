@@ -1,7 +1,7 @@
 FROM rdccosmo/wrf-netcdf
 
-# 32.  x86_64 Linux, gfortran compiler with gcc   (serial) 
-ENV WRF_CONFIGURE_OPTION 32
+# 34.  x86_64 Linux, gfortran compiler with gcc   (dmpar) 
+ENV WRF_CONFIGURE_OPTION 34
 ENV NETCDF $PREFIX
 ENV WRF_EM_CORE 1
 ENV WRF_NMM_CORE 0
