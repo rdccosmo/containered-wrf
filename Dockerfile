@@ -52,6 +52,8 @@ RUN \
         gdal-bin \
     && rm -rf /var/lib/apt/lists/*
 
+ENV PREFIX /home/wrf
+WORKDIR /home/wrf
 ENV DEBIAN_FRONTEND noninteractive
 ENV CC gcc
 ENV CPP /lib/cpp -P
@@ -81,16 +83,16 @@ RUN mkdir -p /home/wrf && \
     useradd wrf -d /home/wrf && \
     chown -R wrf:wrf /home/wrf
 RUN ulimit -s unlimited
-ENV PREFIX /home/wrf
-WORKDIR /home/wrf
-COPY build.sh $PREFIX
 COPY requirements.yml $PREFIX
 RUN pip install --upgrade pip pip
 RUN pip install --upgrade pip setuptools
 RUN pip install -r requirements.yml
+COPY scripts $PREFIX
+COPY build.sh $PREFIX
 USER wrf
-
+RUN ./build.sh
+COPY entrypoint.sh $PREFIX
+ENTRYPOINT ./entrypoint.sh
 
 VOLUME /home/wrf/data
 VOLUME /home/wrf/cron
-CMD /bin/bash
