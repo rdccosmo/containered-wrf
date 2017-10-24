@@ -87,10 +87,10 @@ COPY requirements.yml $PREFIX
 RUN pip install --upgrade pip pip
 RUN pip install --upgrade pip setuptools
 RUN pip install -r requirements.yml
-COPY scripts $PREFIX
 COPY build.sh $PREFIX
 USER wrf
 RUN ./build.sh
+COPY scripts $PREFIX
 COPY entrypoint.sh $PREFIX
 ENTRYPOINT ./entrypoint.sh
 
