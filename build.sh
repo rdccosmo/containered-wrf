@@ -90,7 +90,7 @@ install_jasper() {
     rm $PREFIX/jasper-1.900.1.tar.gz
     cd $PREFIX/jasper-1.900.1
     ./configure --prefix=$PREFIX
-    make \
+    make
     make install
 }
 
