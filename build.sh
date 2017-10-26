@@ -149,7 +149,7 @@ install_cnvgrib() {
     curl --max-time 900 -L -S http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/cnvgrib-1.4.1.tar  -o $PREFIX/cnvgrib-1.4.1.tar
     tar xvf $PREFIX/cnvgrib-1.4.1.tar -C $PREFIX
     rm $PREFIX/cnvgrib-1.4.1.tar
-    cd cnvgrib-1.4.1
+    cd $PREFIX/cnvgrib-1.4.1
     sed -i "s:#.*$::g" makefile
     sed -i "s/g95/gfortran/g" makefile
     sed -i "s|LIBS =.*|LIBS = -L"$PREFIX/lib" -lg2 -lw3 -ljasper -lpng -lz|" makefile
