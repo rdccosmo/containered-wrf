@@ -145,6 +145,12 @@ install_w3lib() {
     cp libw3.a $PREFIX/lib
 }
 
+install_g95() {
+    wget http://ftp.g95.org/v0.93/g95-x86_64-64-linux.tgz -P $PREFIX
+    tar zxvf $PREFIX/g95-x86_64-64-linux.tgz -C $PREFIX
+    ln  -s $PREFIX/g95-install/bin/x86_64-unknown-linux-gnu-g95 $PREFIX/bin/g95
+}
+
 install_cnvgrib() {
     curl --max-time 900 -L -S http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/cnvgrib-1.4.1.tar  -o $PREFIX/cnvgrib-1.4.1.tar
     tar xvf $PREFIX/cnvgrib-1.4.1.tar -C $PREFIX
@@ -227,6 +233,7 @@ install_all() {
     install_arwpost
     install_g2lib
     install_w3lib
+    install_g95
     install_cnvgrib
     install_grads
     install_pygrads
