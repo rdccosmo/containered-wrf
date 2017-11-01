@@ -77,7 +77,7 @@ ENV GRADDIR=$GRADS/Resources/SupportData
 ENV GASCRP=$GRADS/Resources/Scripts
 ENV ARW_CONFIGURE_OPTION 3
 ENV PYTHONPATH $PREFIX/lib/python2.7/site-packages
-ENV PATH $PATH:$PREFIX/bin:$NCARG_ROOT/bin:$GRADS:$GRADS/gribmap:$PREFIX/cnvgrib-1.4.1:$PREFIX/WPS:$PREFIX/WRFV3/test/em_real:$PREFIX/WPS:$PREFIX/ARWpost
+ENV PATH $PATH:$PREFIX/bin:$NCARG_ROOT/bin:$GRADS:$GRADS/gribmap:$PREFIX/cnvgrib-1.4.1:$PREFIX/WPS:$PREFIX/WRFV3/test/em_real:$PREFIX/WRFV3/main:$PREFIX/WRFV3/run:$PREFIX/WPS:$PREFIX/ARWpost
 RUN mkdir -p /home/wrf && \
     mkdir -p $PYTHONPATH && \
     useradd wrf -d /home/wrf && \
