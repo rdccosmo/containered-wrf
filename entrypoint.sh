@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 sed -i "s/geog_data_path = .*/geog_data_path = '\/home\/wrf\/data\/'/" $HOME/WPS/namelist.wps
 
@@ -10,4 +11,4 @@ for f in /home/wrf/scripts/*; do
     echo
 done
 
-/bin/bash
+exec "$@"
